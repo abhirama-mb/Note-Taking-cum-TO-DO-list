@@ -1,0 +1,281 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteFlow | Notes & Tasks</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f3;
+            color: #263128;
+        }
+
+        header {
+            background: white;
+            padding: 22px 8%;
+            border-bottom: 1px solid #e2e7e0;
+        }
+
+        header h2 {
+            color: #47734b;
+        }
+
+        main {
+            max-width: 1050px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            color: #788078;
+            font-size: 14px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .section {
+            background: white;
+            border: 1px solid #e3e8e1;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 22px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #dce2da;
+            border-radius: 7px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 1px solid #6c956f;
+            border-color: #6c956f;
+        }
+
+        button {
+            padding: 11px 16px;
+            background: #527d56;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .item {
+            padding: 18px 0;
+            border-bottom: 1px solid #edf0eb;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .item p {
+            color: #788078;
+            font-size: 13px;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .item-actions {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .item-actions button {
+            padding: 7px 11px;
+            background: #edf1eb;
+            color: #435545;
+        }
+
+        .item-actions .delete {
+            background: #faeae8;
+            color: #a43e35;
+        }
+
+        .task-form {
+            display: flex;
+            gap: 8px;
+        }
+
+        .task-form input {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .task-form button {
+            height: 40px;
+        }
+
+        .task {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .task input {
+            width: auto;
+            margin: 0;
+        }
+
+        .task span {
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            color: #929a91;
+            font-size: 12px;
+            padding: 30px 15px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                margin-top: 30px;
+            }
+
+            .welcome h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>NoteFlow.</h2>
+    </header>
+
+    <main>
+
+        <div class="welcome">
+            <h1>Your notes. Your tasks.</h1>
+            <p>A simple space to organize your thoughts and get things done.</p>
+        </div>
+
+        <div class="container">
+
+            <!-- Notes Section -->
+            <section class="section">
+
+                <h2>My Notes</h2>
+
+                <form>
+                    <input
+                        type="text"
+                        name="title"
+                        placeholder="Note title"
+                        required
+                    >
+
+                    <textarea
+                        name="content"
+                        placeholder="Write your note..."
+                        required
+                    ></textarea>
+
+                    <button type="submit">Add Note</button>
+                </form>
+
+                <div class="item">
+                    <h3>Example Note</h3>
+                    <p>This is a sample note. Your saved notes will appear here.</p>
+
+                    <div class="item-actions">
+                        <button type="button">Edit</button>
+                        <button type="button" class="delete">Delete</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Tasks Section -->
+            <section class="section">
+
+                <h2>My Tasks</h2>
+
+                <form class="task-form">
+                    <input
+                        type="text"
+                        name="task"
+                        placeholder="Enter a new task"
+                        required
+                    >
+
+                    <button type="submit">Add</button>
+                </form>
+
+                <div class="item">
+                    <div class="task">
+                        <input type="checkbox">
+                        <span>Example task</span>
+                    </div>
+
+                    <div class="item-actions">
+                        <button type="button">Edit</button>
+                        <button type="button" class="delete">Delete</button>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        NoteFlow — Keep things simple.
+    </footer>
+
+</body>
+</html>
+```
